@@ -13,3 +13,16 @@
 .externalNativeBuild
 .cxx
 local.properties
+/gradlew
+/gradlew.bat
+/local.properties
+!/.idea/
+.idea/.gitignore
+.idea/compiler.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/vcs.xml
+app/libs/
+app/src/main/res/values-night/
+gradle/
