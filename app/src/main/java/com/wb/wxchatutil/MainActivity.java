@@ -2,6 +2,11 @@ package com.wb.wxchatutil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +14,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+
+import java.util.List;
+
+import cn.hutool.core.util.HexUtil;
+import cn.hutool.crypto.SmUtil;
+import cn.hutool.crypto.asymmetric.KeyType;
+import cn.hutool.crypto.asymmetric.SM2;
 
 public class MainActivity extends AppCompatActivity {
     NumberPicker nbPicker;
@@ -61,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "保存", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_run:
-                Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
+                Utils.openAccessible(this);
+                Utils.openActivity(this, "com.tencent.mm");
+//                Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_warn:
                 Toast.makeText(this, "提醒", Toast.LENGTH_SHORT).show();
@@ -69,4 +83,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }
